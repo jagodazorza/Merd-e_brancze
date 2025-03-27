@@ -1,3 +1,5 @@
+using System.Drawing.Imaging;
+
 namespace Merdże_brancze
 {
     public partial class Form1 : Form
@@ -12,6 +14,8 @@ namespace Merdże_brancze
         {
             Load();
         }
+
+     
 
         public void Load()
         {
@@ -47,5 +51,41 @@ namespace Merdże_brancze
         {
 
         }
-    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+            
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+
+                        Color originalColor = bmp.GetPixel(x, y);
+
+                        Color invertedColor = Color.FromArgb(originalColor.A,
+                                                             255 - originalColor.R,
+                                                             255 - originalColor.G,
+                                                             255 - originalColor.B);
+                        bmp.SetPixel(x, y, invertedColor);
+                    }
+                }
+                pictureBox1.Image = bmp;
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+
+                pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipX);
+                Refresh();
+            }
+            }
+        }
 }
