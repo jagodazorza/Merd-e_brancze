@@ -37,6 +37,7 @@
             radioButton1 = new RadioButton();
             button3 = new Button();
             button4 = new Button();
+            green = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -135,6 +136,16 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // green
+            // 
+            green.Location = new Point(70, 312);
+            green.Name = "green";
+            green.Size = new Size(218, 36);
+            green.TabIndex = 2;
+            green.Text = "Green";
+            green.UseVisualStyleBackColor = true;
+            green.Click += green_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -144,6 +155,7 @@
             Controls.Add(button3);
             Controls.Add(groupBox1);
             Controls.Add(button2);
+            Controls.Add(green);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Name = "Form1";
@@ -165,5 +177,6 @@
         private RadioButton radioButton3;
         private Button button3;
         private Button button4;
+        private Button green;
     }
 }

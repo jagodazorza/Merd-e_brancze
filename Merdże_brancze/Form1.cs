@@ -88,4 +88,34 @@ namespace Merdże_brancze
             }
             }
         }
+        }
+
+        private void green_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+
+                        Color originalColor = bmp.GetPixel(x, y);
+
+                        if (originalColor.G < originalColor.B || originalColor.G < originalColor.R)
+                        {
+                            Color blackColor = Color.FromArgb(originalColor.A, 0, 0, 0);
+                            bmp.SetPixel(x, y, blackColor);
+                        }
+
+
+                    }
+                    pictureBox1.Image = bmp;
+                    pictureBox1.Refresh();
+                }
+                }
+            }
+    }
 }
