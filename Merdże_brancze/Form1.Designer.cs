@@ -30,6 +30,7 @@
         {
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            green = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -52,11 +53,22 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // green
+            // 
+            green.Location = new Point(70, 312);
+            green.Name = "green";
+            green.Size = new Size(218, 36);
+            green.TabIndex = 2;
+            green.Text = "Green";
+            green.UseVisualStyleBackColor = true;
+            green.Click += green_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(green);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Name = "Form1";
@@ -69,5 +81,6 @@
 
         private Button button1;
         private PictureBox pictureBox1;
+        private Button green;
     }
 }
